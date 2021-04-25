@@ -2,6 +2,7 @@ from selenium.webdriver.support.wait import WebDriverWait as Wait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 
+
 class BaseElement(object):
     def __init__(self, driver, locator):
         self.driver = driver
@@ -25,13 +26,12 @@ class BaseElement(object):
         text = self.web_element.text
         return text
 
-
     def input_text(self, text):
         self.web_element.send_keys(text)
         return None
 
     @property
-    def getinputtext(self): 
+    def getinputtext(self):
         text = self.web_element.get_attribute('value')
         return text
 

@@ -4,8 +4,8 @@ from .base_element import BaseElement
 from .base_page import BasePage
 from .locator import Locator
 
-class TrainingGroundPage(BasePage):
 
+class TrainingGroundPage(BasePage):
     url = 'https://techstepacademy.com/training-ground'
 
     @property
@@ -17,6 +17,3 @@ class TrainingGroundPage(BasePage):
     def select1(self):
         locator = (By.ID, 'sel1')
         return BaseElement(driver=self.driver, locator=locator)
-
-
-

@@ -1,6 +1,7 @@
-from selenium import webdriver 
+from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import requests
+
 
 def test_microsoftopens_opera():
     selenium_grid_url = 'http://selenium-hub:4444/wd/hub'
@@ -9,7 +10,7 @@ def test_microsoftopens_opera():
 
     listofBrowsers = [browserOpera]
 
-    for browser in listofBrowsers :
+    for browser in listofBrowsers:
         print("hi i am browser: " + browser.name)
         resp = requests.get("http://www.microsoft.com")
         assert resp.status_code == 200, "google.com failed to return response status 200"
