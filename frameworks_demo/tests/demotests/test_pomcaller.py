@@ -5,7 +5,7 @@ from pages.traininggroundspage import TrainingGroundPage
 from pages.trialofstonespage import TrialPage
 
 
-def test_pageobjects_chrome():
+def test_pom_chrome():
     selenium_grid_url = 'http://selenium-hub:4444/wd/hub'
     browser = webdriver.Remote(desired_capabilities=DesiredCapabilities.CHROME.copy(),
                                command_executor=selenium_grid_url)
