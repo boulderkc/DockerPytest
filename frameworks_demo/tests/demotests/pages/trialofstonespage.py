@@ -25,7 +25,7 @@ class TrialPage(BasePage):
 
     @property
     def secrets_button(self):
-        locator = Locator(by=By.ID, value='r2Bu')
+        locator = Locator(by=By.ID, value='r2Butn')
         return BaseElement(driver=self.driver, locator=locator)
 
     @property

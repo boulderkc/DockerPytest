@@ -42,3 +42,7 @@ class BaseElement(object):
     def getselectedoptiontext(self):
         text = Select(self.web_element).first_selected_option.text
         return text
+
+    def getattribute(self, attribute_name):
+        text = self.web_element.get_attribute(attribute_name)
+        return text
