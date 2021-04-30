@@ -3,16 +3,17 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import requests
 
 
-def test_microsoftopens_chrome():
+def test_microsoft_opens_chrome():
     selenium_grid_url = 'http://selenium-hub:4444/wd/hub'
     browserChrome = webdriver.Remote(desired_capabilities=DesiredCapabilities.CHROME.copy(),
                                      command_executor=selenium_grid_url)
 
-    listofBrowsers = [browserChrome]
+    try:
 
-    for browser in listofBrowsers:
-        print("hi i am browser: " + browser.name)
+        print("hi i am browser: " + browserChrome.name)
         resp = requests.get("http://www.microsoft.com")
         assert resp.status_code == 200, "google.com failed to return response status 200"
 
-        browser.quit()
+    finally:
+
+        browserChrome.quit()

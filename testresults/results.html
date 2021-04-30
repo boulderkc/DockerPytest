@@ -243,7 +243,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>results.html</h1>
-    <p>Report generated on 28-Apr-2021 at 05:38:04 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 30-Apr-2021 at 02:48:51 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -259,8 +259,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.8.5</td></tr></table>
     <h2>Summary</h2>
-    <p>1 tests ran in 3.37 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>6 tests ran in 17.08 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">5 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -271,12 +271,74 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="passed results-table-row">
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">tests/demotests/test_pomcaller.py::test_pom_chrome</td>
-          <td class="col-duration">3.33</td>
+          <td class="col-result">Failed</td>
+          <td class="col-name">tests/demotests/techstepacademy_trainingground/test_techstepacademy_chrome_will_fail.py::test_techstep_academy_multi_browser</td>
+          <td class="col-duration">2.60</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>
+            <div class="log">def test_techstep_academy_multi_browser():<br/>        selenium_grid_url = &#x27;http://selenium-hub:4444/wd/hub&#x27;<br/>        browserChrome = webdriver.Remote(desired_capabilities=DesiredCapabilities.CHROME.copy(),<br/>                                         command_executor=selenium_grid_url)<br/>    <br/>        try:<br/>    <br/>            browserChrome.get(&#x27;https://techstepacademy.com/training-ground&#x27;)<br/>    <br/>            input1_locator_css = browserChrome.find_element_by_css_selector(&#x27;input[id=&quot;ipt1&quot;]&#x27;)<br/>            input2_locator_css = browserChrome.find_element_by_css_selector(&#x27;input[id=&quot;ipt2&quot;]&#x27;)<br/>    <br/>            input2_locator_css.send_keys(&quot;hey you&quot;)<br/>    <br/>            product1_p_inner_html = browserChrome.find_elements_by_xpath(<br/>                &quot;//div/span/b[text()=&#x27;Product 1&#x27;]/../../p&quot;)[0].get_attribute(&#x27;innerHTML&#x27;)<br/>    <br/>            input1_locator_css.send_keys(product1_p_inner_html)<br/>    <br/>            print(&quot;hi i am browser: &quot; + browserChrome.name)<br/>    <br/>            print(<br/>                &quot;I have entered &#x27;hey you&#x27; in the second input box. Now I will assert that the value of that text box &quot;<br/>                &quot;is &#x27;hey you&#x27;&quot;)<br/>    <br/>            assert input2_locator_css.get_attribute(<br/>                &quot;value&quot;) == &quot;hey you&quot;, &quot;input2_locator_css text was not expected &#x27;hey you&#x27;&quot;<br/>    <br/>            print(&quot;this is a print statement after the &#x27;hey you&#x27; successful assertion&quot;)<br/>    <br/>            print(&quot;Next I will assert that the value of that text box is &#x27;hey you2&#x27;, which should fail.&quot;)<br/>    <br/>&gt;           assert input2_locator_css.get_attribute(&quot;value&quot;) == &quot;hey you2&quot;, &quot;input2_locator_css text was not expected &quot; \<br/>                                                                            &quot;&#x27;hey you2&#x27; &quot;<br/><span class="error">E                                                                           AssertionError: input2_locator_css text was not expected &#x27;hey you2&#x27; </span><br/><span class="error">E                                                                           assert &#x27;hey you&#x27; == &#x27;hey you2&#x27;</span><br/><span class="error">E                                                                             - hey you2</span><br/><span class="error">E                                                                             ?        -</span><br/><span class="error">E                                                                             + hey you</span><br/><br/>demotests/techstepacademy_trainingground/test_techstepacademy_chrome_will_fail.py:37: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>hi i am browser: chrome
+I have entered &#x27;hey you&#x27; in the second input box. Now I will assert that the value of that text box is &#x27;hey you&#x27;
+this is a print statement after the &#x27;hey you&#x27; successful assertion
+Next I will assert that the value of that text box is &#x27;hey you2&#x27;, which should fail.
+this is the Finally block where we quit the browser even though an exception was thrown
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/demotests/test_page_object_model_caller.py::test_pom_chrome</td>
+          <td class="col-duration">8.46</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>hi i am browser: chrome
+This test will answer all questions and check for an answer on site https://techstepacademy.com/trial-of-the-stones
+All questions answered on https://techstepacademy.com/trial-of-the-stones, checking to see if Trial Complete was displayed
+If you are seeing this, that means the assertion that Trial Complete was displayed passed.
+hi i am browser: opera
+This test will answer all questions and check for an answer on site https://techstepacademy.com/trial-of-the-stones
+All questions answered on https://techstepacademy.com/trial-of-the-stones, checking to see if Trial Complete was displayed
+If you are seeing this, that means the assertion that Trial Complete was displayed passed.
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/demotests/googledotcom/test_google_chrome.py::test_googleopens_chrome</td>
+          <td class="col-duration">1.53</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>hi i am browser: chrome
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/demotests/googledotcom/test_google_opera.py::test_googleopens_opera</td>
+          <td class="col-duration">1.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>hi i am browser: opera
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/demotests/microsoftdotcom/test_microsoft_chrome.py::test_microsoft_opens_chrome</td>
+          <td class="col-duration">1.07</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>hi i am browser: chrome
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/demotests/microsoftdotcom/test_microsoft_opera.py::test_microsoft_opens_opera</td>
+          <td class="col-duration">2.13</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>hi i am browser: opera
+<br/></div></td></tr></tbody></table></body></html>

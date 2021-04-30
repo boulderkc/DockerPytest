@@ -6,11 +6,13 @@ def test_googleopens_chrome():
     selenium_grid_url = 'http://selenium-hub:4444/wd/hub'
     browserChrome = webdriver.Remote(desired_capabilities=DesiredCapabilities.CHROME.copy(), command_executor=selenium_grid_url)
 
-    listofBrowsers = [browserChrome]
 
-    for browser in listofBrowsers :
-        print("hi i am browser: " + browser.name)
+    try:
+
+        print("hi i am browser: " + browserChrome.name)
         resp = requests.get("http://www.google.com")
         assert resp.status_code == 200, "google.com failed to return response status 200"
 
-        browser.quit()
+    finally:
+
+        browserChrome.quit()
