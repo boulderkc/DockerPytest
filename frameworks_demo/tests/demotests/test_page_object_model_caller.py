@@ -5,7 +5,7 @@ from pages.trialofstonespage import TrialPage
 
 
 @mark.trialpage
-def test_pom_chrome():
+def test_page_object_model_multi_browser():
     selenium_grid_url = 'http://selenium-hub:4444/wd/hub'
     browser_chrome = webdriver.Remote(desired_capabilities=DesiredCapabilities.CHROME.copy(),
                                       command_executor=selenium_grid_url)
